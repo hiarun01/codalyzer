@@ -27,8 +27,7 @@ const HeroSection = () => {
 
         <img
           className="mx-auto hidden w-full max-w-md text-gray-900 md:block dark:text-white"
-          src="/src/assets/Hero.svg"
-          alt="Hero Section Image"
+          src="/hero-img.svg"
         />
       </div>
     </section>
