@@ -2,9 +2,11 @@ import React from "react";
 
 const FaqSection = () => {
   return (
-    <div className=" w-[100vw] flex flex-col justify-between items-center py-15 h-full">
-      <h2 className="text-red-700 my-10 font-bold text-2xl ">How it Wokrs -</h2>
-      <div className="w-[90vw]  space-y-10">
+    <div className=" w-[100vw] flex flex-col justify-between items-center pb-20 h-full px-5">
+      <h1 className="text-white text-3xl py-20 font-mono font-extrabold">
+        How it Wokrs -
+      </h1>
+      <div className="w-[85vw] space-y-10">
         <details className="group [&_summary::-webkit-details-marker]:hidden w-full">
           <summary className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-red-700 p-4 text-gray-900 dark:border-gray-700 dark:bg-red-800 dark:text-white">
             <h2 className="text-lg font-medium">
