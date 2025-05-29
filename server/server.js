@@ -1,0 +1,14 @@
+/* eslint-disable no-undef */
+import dotenv from "dotenv";
+import express from "express";
+import aiRoute from "./routes/ai.route.js";
+dotenv.config({});
+const app = express();
+
+const PORT = process.env.PORT;
+// app.use(express.json);
+app.use("/ai", aiRoute);
+
+app.listen(PORT, () => {
+  console.log(`Server running at PORT ${PORT}`);
+});
