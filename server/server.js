@@ -4,6 +4,7 @@ import express from "express";
 import aiRoute from "./routes/ai.route.js";
 dotenv.config({});
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT;
 // app.use(express.json);

@@ -1,8 +1,8 @@
 import express from "express";
-import {userPrompt} from "../controllers/prompt.controller.js";
+import {codeReview} from "../controllers/code-review.controller.js";
 
 const router = express.Router();
 
-router.get("/get-response", userPrompt);
+router.post("/code-review", codeReview);
 
 export default router;
