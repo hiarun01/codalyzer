@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="mx-auto w-screen max-w-screen-xl px-5 py-16 sm:px-6 sm:py-16 md:grid md:grid-cols-2 md:items-center sm:items-center md:gap-4 lg:px-8 lg:py-8 lg:h-[70vh]">
         <div className="max-w-prose text-left items-center">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl dark:text-white">
-            <span className="font-mono">Codalyze -</span>
+            <span className="font-mono">Codalyzer -</span>
             <strong className="text-red-700 "> AI Code Reviewer</strong>
           </h1>
 
