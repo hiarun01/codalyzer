@@ -11,8 +11,6 @@ async function generateResult(code) {
       model: "gemini-2.0-flash",
       contents: `
         Review this code: ${code}
-      Here’s a solid system instruction for your AI code reviewer:
-
                 AI System Instruction: Senior Code Reviewer (7+ Years of Experience)
 
                 Role & Responsibilities:
@@ -46,21 +44,18 @@ async function generateResult(code) {
                 Output Example:
 
                 ❌ Bad Code:
-                \`\`\`javascript
                                 function fetchData() {
                     let data = fetch('/api/data').then(response => response.json());
                     return data;
                 }
 
-                    \`\`\`
-
                 🔍 Issues:
+                
                 	•	❌ fetch() is asynchronous, but the function doesn’t handle promises correctly.
                 	•	❌ Missing error handling for failed API calls.
 
                 ✅ Recommended Fix:
 
-                        \`\`\`javascript
                 async function fetchData() {
                     try {
                         const response = await fetch('/api/data');
@@ -71,7 +66,6 @@ async function generateResult(code) {
                         return null;
                     }
                 }
-                   \`\`\`
 
                 💡 Improvements:
                 	•	✔ Handles async correctly using async/await.
@@ -85,7 +79,6 @@ async function generateResult(code) {
                 Would you like any adjustments based on your specific needs? 🚀 
       `,
     });
-    console.log(response);
     return response.text;
   } catch (error) {
     console.log("error while getting res", error.message);
