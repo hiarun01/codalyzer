@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-white dark:bg-black border-b border-gray-800 shadow-2xs">
+    <header className="bg-white dark:bg-[#111010] border-b border-[#5c5c5c] shadow-2xs">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
