@@ -2,7 +2,7 @@ import React from "react";
 
 const FaqSection = () => {
   return (
-    <div className=" w-[100vw] flex flex-col justify-between items-center pb-20 h-full px-5">
+    <div className=" bg-[#000000] w-[100vw] flex flex-col justify-between items-center pb-20 h-full px-5">
       <h1 className="text-white text-3xl py-20 font-mono font-extrabold">
         How it Wokrs -
       </h1>
