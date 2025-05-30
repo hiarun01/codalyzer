@@ -11,9 +11,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mt-7 text-base text-pretty text-gray-700 sm:text-lg/relaxed dark:text-gray-200">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-            nisi. Natus, provident accusamus impedit minima harum corporis
-            iusto.
+          Codalyzer – A smart code reviewer powered by GenAI that helps you analyze, review, and improve your code with AI-driven insights.
           </p>
           <div className="mt-10 flex gap-4 sm:mt-6 items-center">
             <Link
