@@ -8,7 +8,9 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <Link to="/">
-              <span className="text-white font-bold text-lg">Codalyzer</span>
+              <span className="text-[#111010] dark:text-white font-bold text-xl sm:text-2xl tracking-wide">
+                Codalyzer
+              </span>
             </Link>
           </div>
 

@@ -1,12 +1,22 @@
 /* eslint-disable no-undef */
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import aiRoute from "./routes/ai.route.js";
 dotenv.config({});
+
 const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT;
+
+app.use(
+  cors({
+    origin: "https://codalyzer.vercel.app",
+    credentials: true,
+  })
+);
+
 // app.use(express.json);
 app.use("/ai", aiRoute);
 
