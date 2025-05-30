@@ -10,7 +10,7 @@ const FaqSection = () => {
         <details className="group [&_summary::-webkit-details-marker]:hidden w-full">
           <summary className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-red-700 p-4 text-gray-900 dark:border-gray-700 dark:bg-red-800 dark:text-white">
             <h2 className="text-lg font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+           How does Codalyzer review my code?
             </h2>
 
             <svg
@@ -30,17 +30,14 @@ const FaqSection = () => {
           </summary>
 
           <p className="px-4 pt-4 text-gray-900 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-            veritatis molestias culpa in, recusandae laboriosam neque aliquid
-            libero nesciunt voluptate dicta quo officiis explicabo consequuntur
-            distinctio corporis earum similique!
+            Codalyzer uses advanced Generative AI models to analyze your codebase. It checks for syntax issues, code smells, design flaws, and best practices based on language-specific and industry-standard guidelines.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden w-full">
           <summary className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-red-800 p-4 text-gray-900 dark:border-gray-700 dark:bg-red-800 dark:text-white">
             <h2 className="text-lg font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              Do I need to upload my entire project?
             </h2>
 
             <svg
@@ -60,17 +57,14 @@ const FaqSection = () => {
           </summary>
 
           <p className="px-4 pt-4 text-gray-900 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-            veritatis molestias culpa in, recusandae laboriosam neque aliquid
-            libero nesciunt voluptate dicta quo officiis explicabo consequuntur
-            distinctio corporis earum similique!
+           No. You can review individual files, selected code snippets, or entire repositories. Codalyzer is flexible and can adapt to the level of detail you need.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden w-full">
           <summary className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-red-800 p-4 text-gray-900 dark:border-gray-700 dark:bg-red-800 dark:text-white">
             <h2 className="text-lg font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+               Which programming languages does Codalyzer support?
             </h2>
 
             <svg
@@ -90,10 +84,7 @@ const FaqSection = () => {
           </summary>
 
           <p className="px-4 pt-4 text-gray-900 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-            veritatis molestias culpa in, recusandae laboriosam neque aliquid
-            libero nesciunt voluptate dicta quo officiis explicabo consequuntur
-            distinctio corporis earum similique!
+           Codalyzer currently supports major languages including JavaScript, TypeScript, Python, Java, and more. We're continuously adding support for additional languages.
           </p>
         </details>
       </div>
