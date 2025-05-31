@@ -9,13 +9,21 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT;
+const mode = process.env.MODE;
 
-app.use(
+if (mode === "dev") {
   cors({
-    origin: "https://codalyzer.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true,
-  })
-);
+  });
+} else if (mode === "prod") {
+  app.use(
+    cors({
+      origin: "https://codalyzer.vercel.app",
+      credentials: true,
+    })
+  );
+}
 
 // app.use(express.json);
 app.use("/ai", aiRoute);
