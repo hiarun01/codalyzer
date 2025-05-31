@@ -12,10 +12,12 @@ const PORT = process.env.PORT;
 const mode = process.env.MODE;
 
 if (mode === "dev") {
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  });
+  app.use(
+    cors({
+      origin: "http://localhost:5173",
+      credentials: true,
+    })
+  );
 } else if (mode === "prod") {
   app.use(
     cors({
