@@ -33,7 +33,6 @@ https://codalyzer.vercel.app/
 - TypeScript
 - Tailwind CSS
 - ShadCN UI
-- Zustand (state management)
 
 **Backend:**
 - Node.js
