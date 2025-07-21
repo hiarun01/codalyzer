@@ -30,7 +30,7 @@ https://codalyzer.vercel.app/
 
 **Frontend:**
 - React
-- TypeScript
+- Javascript
 - Tailwind CSS
 - ShadCN UI
 
