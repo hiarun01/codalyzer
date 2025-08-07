@@ -1,7 +1,7 @@
 # Codalyzer
 
 Codalyzer – A smart code reviewer powered by GenAI that helps you analyze, review, and improve your code with AI-driven insights.
-https://codalyzer.vercel.app/
+https://codalyzer.hiarun.me/
 
 <div align="center">
   
