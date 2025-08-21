@@ -3,6 +3,7 @@ import {api} from "../../api/api";
 import rehypeHighlight from "rehype-highlight";
 import Markdown from "react-markdown";
 import Loading from "../Loading";
+import Header from "../Header";
 
 const Dashboard = () => {
   const [code, setCode] = useState("");
@@ -32,7 +33,8 @@ const Dashboard = () => {
   };
   return (
     <>
-      <main className="bg-[#111010] min-h-[83vh] lg:h-[80vh] py-5 px-2 md:px-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+      <Header />
+      <main className="bg-[#111010] min-h-screen lg:h-[70vh] py-5 px-2 md:px-5 flex flex-col lg:flex-row justify-center items-center gap-5">
         {/* Left section */}
         <div className="w-full lg:w-1/2 border border-[#5c5c5c] rounded-2xl h-auto lg:h-[80vh] sm:h-[50vh] flex flex-col justify-between p-4 md:p-6 mb-4 lg:mb-0">
           {/* Code section */}

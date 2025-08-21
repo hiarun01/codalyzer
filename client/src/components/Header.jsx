@@ -1,8 +1,25 @@
-import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem("user-info");
+    if (userInfo) {
+      setUser(JSON.parse(userInfo));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user-info");
+    navigate("/login");
+    setUser(null);
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -28,25 +45,40 @@ const Header = () => {
           </div>
 
           <div className="md:flex items-center space-x-4">
-            <Link
-              to="/dashboard"
-              className="inline-flex items-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 transition-colors duration-200"
-            >
-              Get Started
-              <svg
-                className="ml-2 w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+            {user ? (
+              <div className="relative flex items-center space-x-4 group">
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 cursor-pointer"
                 />
-              </svg>
-            </Link>
+
+                {/* Dropdown */}
+                <div className="absolute right-0 mt-12 w-48 bg-white dark:bg-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+                  <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+                    <div className="font-semibold text-gray-900 dark:text-white">
+                      {user.name}
+                    </div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      {user.email}
+                    </div>
+                  </div>
+                  <button
+                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="inline-flex items-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 transition-colors duration-200"
+              >
+                Get Started
+              </Link>
+            )}
           </div>
         </div>
       </div>

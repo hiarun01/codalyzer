@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +12,13 @@
   "type": "module",
   "dependencies": {
     "@google/genai": "^1.1.0",
+    "axios": "^1.11.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "googleapis": "^156.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

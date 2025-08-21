@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-black dark:via-gray-900 dark:to-black border-t border-gray-700/50 dark:border-gray-600/30">
+    <footer className="bg-transparent from-gray-900 via-gray-800 to-gray-900 dark:from-black dark:via-gray-900 dark:to-black border-t border-gray-700/50 dark:border-gray-600/30">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         {/* Main Content */}
         <div className="flex flex-col items-center text-center space-y-5">
