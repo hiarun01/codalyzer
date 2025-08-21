@@ -16,14 +16,14 @@ const mode = process.env.MODE;
 if (mode === "dev") {
   app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: process.env.client_uri,
       credentials: true,
     })
   );
 } else if (mode === "prod") {
   app.use(
     cors({
-      origin: "https://codalyzer.hiarun.me",
+      origin: process.env.client_uri,
       credentials: true,
     })
   );
