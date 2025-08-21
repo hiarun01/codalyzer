@@ -23,7 +23,7 @@ if (mode === "dev") {
 } else if (mode === "prod") {
   app.use(
     cors({
-      origin: "https://codalyzer.vercel.app",
+      origin: "https://codalyzer.hiarun.me",
       credentials: true,
     })
   );
