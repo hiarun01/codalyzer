@@ -25,28 +25,23 @@ const LoginWithGoogle = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-100 to-purple-200">
-      <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center space-y-6">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-black">
+      <div className="bg-[#111010] rounded-xl shadow-md border p-8 flex flex-col items-center space-y-6">
         <img
           src="https://developers.google.com/identity/images/g-logo.png"
           alt="Google Logo"
-          className="w-16 h-16 mb-5"
+          className="w-16 h-16 mb-5 rounded-full "
         />
 
         <button
           onClick={googleLogin}
-          className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          className="flex items-center gap-2 px-6 py-2 bg-[#111010] border border-gray-700 hover:bg-[#1b1919] rounded-md text-white transition"
         >
-          <img
-            src="https://developers.google.com/identity/images/g-logo.png"
-            alt="Google"
-            className="w-5 h-5"
-          />
           Login With Google
         </button>
         <button
           onClick={() => navigate("/")}
-          className=" text-blue-600  hover:underline"
+          className=" text-[#EDEDED] hover:underline cursor-pointer"
         >
           Go to Home Page
         </button>

@@ -5,6 +5,8 @@ const Header = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState();
 
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const userInfo = localStorage.getItem("user-info");
     if (userInfo) {
@@ -17,6 +19,14 @@ const Header = () => {
     navigate("/login");
     setUser(null);
   };
+
+  // Check if the current page is the dashboard
+  const isDashboard = window.location.pathname === "/dashboard";
+
+  if (isDashboard) {
+    document.body.classList.add("overflow-hidden");
+    document.body.classList.add("bg-[#111010]");
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
@@ -46,30 +56,51 @@ const Header = () => {
 
           <div className="md:flex items-center space-x-4">
             {user ? (
-              <div className="relative flex items-center space-x-4 group">
+              <div className="relative flex items-center space-x-4">
                 <img
+                  onClick={() => setIsOpen((prev) => !prev)}
                   src={user.picture}
                   alt={user.name}
                   className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 cursor-pointer"
                 />
 
                 {/* Dropdown */}
-                <div className="absolute right-0 mt-12 w-48 bg-white dark:bg-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50">
-                  <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                    <div className="font-semibold text-gray-900 dark:text-white">
-                      {user.name}
+                {isOpen && (
+                  <div className="absolute top-14 right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded shadow-lg z-50 border border-gray-200 dark:border-gray-700">
+                    {/* Close button */}
+                    <button
+                      className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 dark:hover:text-white text-xl"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      &times;
+                    </button>
+                    <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+                      <div className="font-semibold text-gray-900 dark:text-white">
+                        {user.name}
+                      </div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
+                        {user.email}
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {user.email}
+                    <div className="flex flex-col p-2">
+                      <button
+                        className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+                        onClick={() => {
+                          setIsOpen(false);
+                          navigate("/dashboard");
+                        }}
+                      >
+                        Dashboard
+                      </button>
+                      <button
+                        className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </button>
                     </div>
                   </div>
-                  <button
-                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </button>
-                </div>
+                )}
               </div>
             ) : (
               <Link

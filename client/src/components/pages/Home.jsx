@@ -61,10 +61,11 @@ const Home = () => {
                 </svg>
               </Link>
               <Link
-                to="/dashboard"
+                to="https://github.com/hiarun01/codalyzer"
+                target="_blank"
                 className="inline-flex items-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold text-white shadow-sm hover:border-1 border-gray-700"
               >
-                Start on github
+                Start on GitHub
                 <svg
                   className="ml-2 w-4 h-4"
                   fill="none"
