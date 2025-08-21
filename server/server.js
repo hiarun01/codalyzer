@@ -1,11 +1,13 @@
-/* eslint-disable no-undef */
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
+import {connectDB} from "./DBConnection/db.js";
 import aiRoute from "./routes/ai.route.js";
+import authRoute from "./routes/auth.route.js";
 dotenv.config({});
 
 const app = express();
+
 app.use(express.json());
 
 const PORT = process.env.PORT;
@@ -27,9 +29,11 @@ if (mode === "dev") {
   );
 }
 
-// app.use(express.json);
 app.use("/ai", aiRoute);
+
+app.use("/auth", authRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running at PORT ${PORT}`);
+  connectDB();
 });
