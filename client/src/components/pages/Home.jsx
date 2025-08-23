@@ -8,19 +8,13 @@ const Home = () => {
     <>
       <Header />
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-red-50 dark:from-gray-900 dark:via-black dark:to-red-950">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
-
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             {/* Badge */}
             <div className="mb-8 flex justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:text-gray-300 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
                 Powered by AI{" "}
-                <span className="font-semibold text-red-600 dark:text-red-400">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Learn more <span aria-hidden="true">&rarr;</span>
-                </span>
+                <span className="font-semibold text-red-600 dark:text-red-400"></span>
               </div>
             </div>
 
