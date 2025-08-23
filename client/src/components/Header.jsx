@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
@@ -56,7 +56,7 @@ const Header = () => {
 
           <div className="md:flex items-center space-x-4">
             {user ? (
-              <div className="relative flex items-center space-x-4">
+              <div className="relative flex items-center ">
                 <img
                   onClick={() => setIsOpen((prev) => !prev)}
                   src={user.picture}
@@ -82,16 +82,29 @@ const Header = () => {
                         {user.email}
                       </div>
                     </div>
-                    <div className="flex flex-col p-2">
-                      <button
-                        className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
-                        onClick={() => {
-                          setIsOpen(false);
-                          navigate("/dashboard");
-                        }}
-                      >
-                        Dashboard
-                      </button>
+                    <div className=" flex flex-col p-2">
+                      {isDashboard ? (
+                        <button
+                          className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+                          onClick={() => {
+                            setIsOpen(false);
+                            navigate("/");
+                          }}
+                        >
+                          Home
+                        </button>
+                      ) : (
+                        <button
+                          className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+                          onClick={() => {
+                            setIsOpen(false);
+                            navigate("/dashboard");
+                          }}
+                        >
+                          Dashboard
+                        </button>
+                      )}
+
                       <button
                         className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
                         onClick={handleLogout}

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "../../index.css";
 import {api} from "../../api/api";
 import rehypeHighlight from "rehype-highlight";
@@ -32,40 +32,16 @@ const Dashboard = () => {
       setLoading(false); // Stop loading
     }
   };
+
   return (
     <>
       <Header />
-      <main className="bg-[#111010] min-h-screen py-4 px-2 md:px-6 flex flex-col lg:flex-row justify-center items-stretch gap-6">
-        {/* Left section */}
-        <section className="w-full lg:w-1/2 border border-[#232323] rounded-2xl h-[87vh] flex flex-col justify-between p-6 bg-[#18181b] shadow-lg">
-          <label className="text-white mb-3 text-lg font-semibold text-left">
-            Paste your code Here:
-          </label>
-          <div className="flex-1 flex flex-col">
-            <textarea
-              className="bg-[#101012] text-gray-200 rounded-lg p-4 h-60 md:h-full resize-none border border-[#232323] focus:outline-none focus:border-red-700 transition"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-              placeholder="Paste or write your code here..."
-              style={{minHeight: "200px"}}
-            />
-          </div>
-          <div className="mt-4 flex justify-end">
-            <button
-              className="rounded-md bg-red-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 transition w-fit shadow"
-              onClick={handleAnalysis}
-              disabled={loading}
-            >
-              {loading ? "Analyzing..." : "Code Analyze"}
-            </button>
-          </div>
-        </section>
-        {/* Right section */}
-        <section className="w-full lg:w-1/2 h-[87vh] rounded-2xl bg-[#18181b] border border-[#232323] p-6 overflow-auto shadow-lg flex flex-col scrollbar-none">
-          <label className="text-white mb-3 text-lg font-mono font-semibold text-left block">
-            Analysis Result:
-          </label>
-          <div className="border-b border-[#232323] mb-4" />
+      <main className="bg-[#111010] min-h-screen flex flex-col items-center px-2 md:px-0 py-2 gap-5">
+        {/* Result Section */}
+        <section
+          className="w-full max-w-5xl flex-1 rounded-2xl bg-[#18181b] border border-[#232323] p-4 md:p-6 shadow-lg flex flex-col overflow-auto hide-scrollbar"
+          style={{minHeight: "220px", maxHeight: "75vh"}}
+        >
           <div className="text-gray-100 whitespace-pre-wrap flex-1 flex justify-center items-center">
             {loading ? (
               <Loading />
@@ -74,12 +50,30 @@ const Dashboard = () => {
                 Results will be shown here...
               </span>
             ) : (
-              <div className="">
-                <Markdown rehypePlugins={[rehypeHighlight]}>
-                  {code === "" ? setResult("") : result}
-                </Markdown>
+              <div className="w-full">
+                <Markdown rehypePlugins={[rehypeHighlight]}>{result}</Markdown>
               </div>
             )}
+          </div>
+        </section>
+        {/* Input Section */}
+        <section className="w-full max-w-5xl rounded-2xl border border-[#232323] bg-[#18181b] shadow-lg p-3 flex flex-col gap-2 sticky bottom-0">
+          <textarea
+            className="bg-[#101012] text-gray-200 rounded-lg p-3 resize-none border border-[#232323] focus:outline-none focus:border-red-700 transition min-h-[48px] max-h-32"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            placeholder="Paste or write your code here..."
+            disabled={loading}
+            rows={2}
+          />
+          <div className="flex justify-center">
+            <button
+              className="rounded-md bg-red-700 px-5 lg:px-10 py-2.5 text-sm font-extrabold text-white hover:bg-red-800 transition w-fit shadow disabled:opacity-60"
+              onClick={handleAnalysis}
+              disabled={loading || !code.trim()}
+            >
+              {loading ? "Analyzing..." : "Code Analyze"}
+            </button>
           </div>
         </section>
       </main>
