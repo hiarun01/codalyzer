@@ -5,22 +5,7 @@ https://codalyzer.hiarun.me/
 
 <div align="center">
   
-![Screenshot 2025-06-22 231038](https://github.com/user-attachments/assets/fa07a79c-5fa4-4fcc-8d44-fb34a3b860a7)
-
-  
-</div>
-
-<div align="center">
-
-  
-![Screenshot 2025-06-22 231048](https://github.com/user-attachments/assets/a7d82529-12d9-4d08-a146-84e91967e157)
-
-  
-</div>
-<div align="center">
-
-  
-![Screenshot 2025-06-22 231059](https://github.com/user-attachments/assets/7b0b3282-2e35-4a0b-b382-949eac611696)
+<img width="1899" height="867" alt="Screenshot 2025-08-24 232952" src="https://github.com/user-attachments/assets/b0f106a9-ede6-4d7f-bb17-5ab51f0d2f1c" />
 
   
 </div>
