@@ -33,24 +33,9 @@ const Footer = () => {
           {/* Divider */}
           <div className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
           {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm">
-            <p className="text-gray-400">
-              © 2024 Codalyzer. All rights reserved.
-            </p>
+          <div className="flex justify-center  items-center text-sm">
             <div className="flex items-center space-x-2">
-              <span className="text-gray-400">Built with</span>
-              <svg
-                className="w-4 h-4 text-red-500 animate-pulse"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="text-gray-400">by</span>
+              <span className="text-gray-400">Built By</span>
               <a
                 href="https://x.com/hiarun01"
                 target="_blank"

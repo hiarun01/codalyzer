@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
+import {Button} from "./ui/button";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -29,8 +30,8 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
-      <div className="mx-auto max-w-5xl px-4">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20 px-5">
+      <div className="mx-auto max-w-5xl px-5">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
@@ -116,11 +117,13 @@ const Header = () => {
                 )}
               </div>
             ) : (
-              <Link
-                to="/login"
-                className="inline-flex items-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 transition-colors duration-200"
-              >
-                Get Started
+              <Link to="/login">
+                <Button
+                  variant="outline"
+                  className="text-white hover:bg-red-600 hover:border-red-600 cursor-pointer"
+                >
+                  Get Started
+                </Button>
               </Link>
             )}
           </div>
