@@ -24,10 +24,21 @@ const Header = () => {
   // Check if the current page is the dashboard
   const isDashboard = window.location.pathname === "/dashboard";
 
-  if (isDashboard) {
-    document.body.classList.add("overflow-hidden");
-    document.body.classList.add("bg-[#111010]");
-  }
+  useEffect(() => {
+    if (isDashboard) {
+      document.body.classList.add("overflow-hidden");
+      document.body.classList.add("bg-[#111010]");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove("bg-[#111010]");
+    }
+
+    // Cleanup function to remove classes when component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove("bg-[#111010]");
+    };
+  }, [isDashboard]);
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20 px-5">
