@@ -1,10 +1,15 @@
 import {useGoogleLogin} from "@react-oauth/google";
 import {GoogleAuth} from "../../api/api";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 import {Button} from "../ui/button";
+import Loading from "../Loading";
 const LoginWithGoogle = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const googleResponse = async (authResponse) => {
+    setIsLoading(true);
     try {
       if (authResponse && authResponse.code) {
         const response = await GoogleAuth(authResponse.code);
@@ -16,6 +21,8 @@ const LoginWithGoogle = () => {
       }
     } catch (error) {
       console.error("Google login failed:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -37,9 +44,19 @@ const LoginWithGoogle = () => {
         <Button
           onClick={googleLogin}
           variant="outline"
-          className="text-white hover:bg-red-600 hover:border-red-600 cursor-pointer"
+          className="text-white hover:bg-red-600 hover:border-red-600 cursor-pointer flex items-center gap-2"
+          disabled={isLoading}
         >
-          Login With Google
+          {isLoading ? (
+            <>
+              <div className="scale-50">
+                <Loading />
+              </div>
+              <span>Signing in...</span>
+            </>
+          ) : (
+            "Login With Google"
+          )}
         </Button>
         <Button
           variant="link"
